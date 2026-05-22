@@ -6,7 +6,7 @@ export default function About() {
         frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js'],
         backend: ['Laravel', 'Node.js', 'PHP', 'Express', 'REST APIs'],
         database: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis'],
-        tools: ['Git', 'Docker', 'AWS', 'Vercel', 'AI Integration'],
+        tools: ['Git', 'Docker', 'Supabase', 'Vercel', 'AI Integration'],
     };
 
     const highlights = [
@@ -47,7 +47,7 @@ export default function About() {
                         About <span className="gradient-text">Me</span>
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Experienced developer passionate about building scalable, user-centric applications
+                        I build production-ready web applications that solve real business problems — on time, on budget, and built to last.
                     </p>
                 </motion.div>
 
@@ -62,13 +62,13 @@ export default function About() {
                     <div className="glass-effect rounded-2xl p-8 md:p-10">
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                             I'm a <span className="font-semibold text-primary-600 dark:text-primary-400">Full Stack Developer</span> with over{' '}
-                            <span className="font-semibold">5 years of professional experience</span> since mid-2019. Throughout my journey, I've successfully delivered{' '}
-                            <span className="font-semibold">15+ production-ready projects</span> across various industries.
+                            <span className="font-semibold">7 years of freelance & professional experience</span> since mid-2019. I've delivered{' '}
+                            <span className="font-semibold">40+ production systems</span> — from government MIS platforms to enterprise business apps — each one shipped, used, and maintained in the real world.
                         </p>
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                            My expertise spans both frontend and backend development, with a strong focus on creating efficient, maintainable, and scalable solutions.
-                            I thrive in diverse tech ecosystems and am constantly learning—currently expanding my skills in <span className="font-semibold text-primary-600 dark:text-primary-400">Golang</span> and
-                            modern <span className="font-semibold text-primary-600 dark:text-primary-400">AI integrations</span>.
+                            I take ownership of the entire build — architecture, backend, frontend, database, and deployment. You get a dedicated developer who cares about your product's success, not just writing code. Currently expanding into{' '}
+                            <span className="font-semibold text-primary-600 dark:text-primary-400">Golang</span> and{' '}
+                            <span className="font-semibold text-primary-600 dark:text-primary-400">AI integrations</span> to bring even more value to every project.
                         </p>
                     </div>
                 </motion.div>

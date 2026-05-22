@@ -50,7 +50,7 @@ export default function Contact() {
             ),
             label: 'LinkedIn',
             value: 'linkedin.com/in/salehattamimi',
-            href: 'https://linkedin.com/in/salehattamimi',
+            href: 'https://linkedin.com/in/saleh-attamimi-bbb5a6221',
         },
         {
             icon: () => (

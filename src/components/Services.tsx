@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Database, Globe, Smartphone, Sparkles, Wrench } from 'lucide-react';
+import { Link } from 'react-scroll';
 
 export default function Services() {
     const services = [
@@ -115,22 +116,26 @@ export default function Services() {
                             Available for freelance work, contract positions, and full-time opportunities
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <motion.a
-                                href="#contact"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium shadow-lg shadow-primary-500/50 transition-colors"
-                            >
-                                Get In Touch
-                            </motion.a>
-                            <motion.a
-                                href="#projects"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-3 bg-transparent border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white rounded-lg font-medium transition-all"
-                            >
-                                View Portfolio
-                            </motion.a>
+                            <Link to="contact" smooth={true} duration={500}>
+                                <motion.a
+                                    href="#contact"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium shadow-lg shadow-primary-500/50 transition-colors"
+                                >
+                                    Get In Touch
+                                </motion.a>
+                            </Link>
+                            <Link to="projects" smooth={true} duration={500}>
+                                <motion.a
+                                    href="#projects"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-3 bg-transparent border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white rounded-lg font-medium transition-all"
+                                >
+                                    View Portfolio
+                                </motion.a>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>

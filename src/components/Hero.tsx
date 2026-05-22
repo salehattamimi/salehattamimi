@@ -50,7 +50,7 @@ export default function Hero() {
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                             </span>
                             <span className="text-sm font-medium text-green-700 dark:text-green-400">
-                                Available for freelance & full-time
+                                Available for freelance projects
                             </span>
                         </motion.div>
 
@@ -131,28 +131,26 @@ export default function Hero() {
                                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold shadow-lg shadow-primary-500/30 transition-colors"
                             >
                                 <Briefcase className="w-5 h-5" />
-                                Hire Me
+                                Start a Project
                             </motion.a>
-                            <Link to="projects" smooth={true} duration={500}>
-                                <motion.a
-                                    href="/cv/CV-SalehAttamimi.pdf"
-                                    download
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white rounded-xl font-semibold transition-all"
-                                >
-                                    <Download className="w-5 h-5" />
-                                    Download CV
-                                </motion.a>
-                                <motion.a
+                            <motion.a
+                                href="/cv/SALEH ABDULLAH ATTAMIMI S.KOM.pdf"
+                                download
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white rounded-xl font-semibold transition-all"
+                            >
+                                <Download className="w-5 h-5" />
+                                Download CV
+                            </motion.a>
+                            {/* <motion.a
                                     href="#projects"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl font-semibold transition-colors"
                                 >
                                     View Work
-                                </motion.a>
-                            </Link>
+                                </motion.a> */}
 
                         </motion.div>
 
@@ -166,7 +164,7 @@ export default function Hero() {
                             <span className="text-sm text-gray-500 dark:text-gray-400">Find me on:</span>
                             {[
                                 { icon: GithubIcon, href: 'https://github.com/salehattamimi', label: 'GitHub' },
-                                { icon: LinkedinIcon, href: 'https://linkedin.com/in/salehattamimi', label: 'LinkedIn' },
+                                { icon: LinkedinIcon, href: 'https://linkedin.com/in/saleh-attamimi-bbb5a6221', label: 'LinkedIn' },
                                 { Icon: Mail, href: 'mailto:hello@salehattamimi.com', label: 'Email' },
                             ].map((s) => (
                                 <motion.a
@@ -274,14 +272,16 @@ export default function Hero() {
                     transition={{ delay: 1.2 }}
                     className="flex justify-center mt-10"
                 >
-                    <motion.a
-                        href="#about"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="text-gray-400 dark:text-gray-600 hover:text-primary-500 transition-colors"
-                    >
-                        <ChevronDown className="w-8 h-8" />
-                    </motion.a>
+                    <Link to="about" smooth={true} duration={500}>
+                        <motion.a
+                            href="#about"
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="text-gray-400 dark:text-gray-600 hover:text-primary-500 transition-colors"
+                        >
+                            <ChevronDown className="w-8 h-8" />
+                        </motion.a>
+                    </Link>
                 </motion.div>
             </div>
         </section>

@@ -3,6 +3,8 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { Link as LinkReact } from 'react-router-dom';
+
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
@@ -18,11 +20,12 @@ export default function Navbar() {
     }, []);
 
     const navItems = [
-        { label: 'Home', href: '#home' },
-        { label: 'About', href: '#about' },
-        { label: 'Projects', href: '#projects' },
-        { label: 'Services', href: '#services' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'Home', href: '#home', isExternal: false },
+        { label: 'About', href: '#about', isExternal: false },
+        { label: 'Projects', href: '#projects', isExternal: false },
+        { label: 'Services', href: '#services', isExternal: false },
+        { label: 'Contact', href: '#contact', isExternal: false },
+        { label: 'Login', href: '/login', isExternal: true },
     ];
 
     return (
@@ -49,17 +52,21 @@ export default function Navbar() {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <Link to={item.href.substring(1)} smooth={true} duration={500}>
-                                <motion.a
-                                    key={item.label}
-                                    href={item.href}
-                                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                                    whileHover={{ y: -2 }}
-                                    whileTap={{ y: 0 }}
-                                >
-                                    {item.label}
-                                </motion.a>
-                            </Link>
+                            item.isExternal ? (
+                                <LinkReact to="/login">Login</LinkReact>
+                            ) :
+                                <Link to={item.href.substring(1)} smooth={true} duration={500}>
+                                    <motion.a
+                                        key={item.label}
+                                        href={item.href}
+                                        className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                                        whileHover={{ y: -2 }}
+                                        whileTap={{ y: 0 }}
+                                    >
+                                        {item.label}
+                                    </motion.a>
+                                </Link>
+
                         ))}
 
                         {/* Theme Toggle */}
