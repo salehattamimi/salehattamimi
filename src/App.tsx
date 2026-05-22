@@ -7,6 +7,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './auth/login'
+import DashboardLayout from './dashboard/layout'
+import Dashboard from './dashboard/page/dashboard'
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<div><Login /></div>} />
           <Route path="/" element={<div><Navbar /><Hero /><About /><Projects /><Services /><Contact /><Footer /></div>} />
+
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
         </Routes>
 
       </BrowserRouter>
