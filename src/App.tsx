@@ -5,10 +5,17 @@ import Projects from './components/Projects'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Login from './auth/login'
 import DashboardLayout from './dashboard/layout'
 import Dashboard from './dashboard/page/dashboard'
+
+function ProtectedRoute() {
+  const token = localStorage.getItem('token');
+
+  return token ? <Outlet /> : <Navigate to="/login" replace />;
+}
+
 
 function App() {
   return (
@@ -19,8 +26,10 @@ function App() {
           <Route path="/login" element={<div><Login /></div>} />
           <Route path="/" element={<div><Navbar /><Hero /><About /><Projects /><Services /><Contact /><Footer /></div>} />
 
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+            </Route>
           </Route>
         </Routes>
 

@@ -1,12 +1,17 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { Navigate } from "react-router-dom";
 
 const login = () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return <Navigate to="/dashboard" replace />;
+    }
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [isError, setIsError] = useState(false);
+    const [_isError, setIsError] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, _setIsLoading] = useState(false);
     const loginSave = async (e: FormEvent) => {
         e.preventDefault();
         setIsError(false);
@@ -25,7 +30,9 @@ const login = () => {
                 }
             }
             console.log('Login berhasil');
-            console.log('Response:', response);
+            const data = await response.json();
+            localStorage.setItem('token', data.token || '');
+            console.log('Response:', data.token);
 
         } catch (err) {
             setIsError(true);

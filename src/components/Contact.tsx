@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import React from 'react';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 
@@ -112,7 +113,7 @@ export default function Contact() {
                                 >
                                     <div className="flex-shrink-0">
                                         <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400">
-                                            {typeof item.icon === 'function' ? <item.icon /> : <item.icon className="w-6 h-6" />}
+                                            {React.createElement(item.icon as React.FC<{ className?: string }>, { className: "w-6 h-6" })}
                                         </div>
                                     </div>
                                     <div className="ml-4">
