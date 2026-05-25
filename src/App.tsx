@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom
 import Login from './auth/login'
 import DashboardLayout from './dashboard/layout'
 import Dashboard from './dashboard/page/dashboard'
+import ProjectPage from './master/projects'
 
 function ProtectedRoute() {
   const token = localStorage.getItem('token');
@@ -29,6 +30,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<Dashboard />} />
+              <Route path="projects" element={<ProjectPage />} />
             </Route>
           </Route>
         </Routes>
